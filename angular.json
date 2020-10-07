@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "clone-airbnb"
+    }
+  },
+  "defaultProject": "clone-airbnb",
+  "cli": {
+    "analytics": "d6f00779-e1dc-4a50-9dfd-7f9276557dd9"
+  }
 }
