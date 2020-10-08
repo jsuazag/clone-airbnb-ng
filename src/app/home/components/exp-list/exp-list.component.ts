@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ExperienceService } from 'src/app/services/experience/experience.service';
+import { IExperience } from 'src/app/shared/models/experience.model';
 
 @Component({
   selector: 'app-exp-list',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExpListComponent implements OnInit {
 
-  constructor() { }
+  public experiences: Array<IExperience>;
+
+  constructor(private experienceService: ExperienceService) { }
 
   ngOnInit(): void {
+    this.experiences = this.experienceService.getExperiences();
   }
 
 }
