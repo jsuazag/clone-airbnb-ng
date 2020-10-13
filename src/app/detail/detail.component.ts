@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ExperienceService } from '../services/experience/experience.service';
+import { IExperience } from '../shared/models/experience.model';
 
 @Component({
   selector: 'app-detail',
@@ -8,7 +10,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  public experience: IExperience;
+
+  constructor(
+      private route: ActivatedRoute,
+      private experienceService: ExperienceService
+    ) { }
 
   ngOnInit(): void {
     this.getParams();
@@ -17,7 +24,7 @@ export class DetailComponent implements OnInit {
   private getParams(): void {
     this.route.params.subscribe(params => {
       const id = Number(params.id);
-      console.log('id experiencia:', id);
+      this.experience = this.experienceService.getExperienceById(id)
     });
   }
 
