@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { DetailComponent } from './detail/detail.component';
 import { Page404Component } from './error-page/components/page404/page404.component';
-import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
 
 export const routes: Routes = [
@@ -12,7 +11,7 @@ export const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    loadChildren: () => import('./home/home.module').then(mod => mod.HomeModule)
   },
   {
     path: 'detail/:id',

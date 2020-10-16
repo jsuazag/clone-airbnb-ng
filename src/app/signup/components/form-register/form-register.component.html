@@ -12,10 +12,13 @@
       <label>Correo electrónico:</label>
       <input placeholder="@" formControlName="email" type="email" name="emailText" />
     </div>
+    <span class="error"> {{ getError('email') }} </span>
     <div class="control-form">
       <label>Contraseña:</label>
       <input formControlName="password" type="password" name="passwordText" />
     </div>
+    <span class="error"> {{ getError('password') }} </span>
+    <br /><br />
     <button (click)="register()" [disabled]="formGroup.invalid">Registarme</button>
   </form>
 </section>
