@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
@@ -20,7 +21,8 @@ import { SignupModule } from './signup/signup.module';
     HomeModule,
     DetailModule,
     RouterModule,
-    SignupModule
+    SignupModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

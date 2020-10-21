@@ -24,7 +24,7 @@ export class DetailComponent implements OnInit {
   private getParams(): void {
     this.route.params.subscribe(params => {
       const id = Number(params.id);
-      this.experience = this.experienceService.getExperienceById(id)
+      // this.experience = this.experienceService.getExperienceById(id)
     });
   }
 
